@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create car</title>
+</head>
+<body>
+<h1>Create car</h1>
+<form th:action="@{/cars/update}" method="post" th:object="${car}">
+    <input type="hidden" required th:field="*{id}">
+    <input type="text" required th:field="*{name}">
+    <br>
+    <input type="text" required th:field="*{details}">
+    <br>
+    <input type="text" required th:field="*{manufacturer}">
+    <br>
+    <input type="text" required th:field="*{price}">
+    <br>
+    <select th:field="*{status}">
+        <option th:value="true">True</option>
+        <option th:value="false">False</option>
+    </select>
+    <br>
+    <br>
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>
