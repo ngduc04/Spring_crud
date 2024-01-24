@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chung Cake</title>
+</head>
+<body>
+<table th:border="1px">
+    <h1>Danh sách nhân đã thêm</h1>
+    <button><a th:href="@{/cake/add}">Thêm bánh mới</a></button>
+    <tr>
+        <td>#</td>
+        <td>Nhân</td>
+
+
+    </tr>
+
+    <tr th:each="cake, state : ${list}">
+        <th th:text="${state.count}"></th>
+        <th th:text="${cake.name}"></th>
+        <th th:text="${cake.status}"></th>
+
+
+    </tr>
+
+
+</table>
+
+</body>
+</html>
